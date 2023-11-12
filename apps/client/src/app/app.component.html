@@ -1,0 +1,12 @@
+@for (user of users; track user.id) {
+<div>
+  <p>{{ user.id }}</p>
+  <p>{{ user.username }}</p>
+  <p>{{ user.password }}</p>
+</div>
+}
+<div>
+  <input [(ngModel)]="username" />
+  <input [(ngModel)]="password" />
+  <button (click)="submit()">submit</button>
+</div>
