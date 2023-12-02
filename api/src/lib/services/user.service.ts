@@ -40,7 +40,7 @@ export class UserService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  userControllerFindAll$Response(params: UserControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UserDto>>> {
+  userControllerFindAll$Response(params?: UserControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UserDto>>> {
     return userControllerFindAll(this.http, this.rootUrl, params, context);
   }
 
@@ -54,7 +54,7 @@ export class UserService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  userControllerFindAll(params: UserControllerFindAll$Params, context?: HttpContext): Observable<Array<UserDto>> {
+  userControllerFindAll(params?: UserControllerFindAll$Params, context?: HttpContext): Observable<Array<UserDto>> {
     return this.userControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<Array<UserDto>>): Array<UserDto> => r.body)
     );

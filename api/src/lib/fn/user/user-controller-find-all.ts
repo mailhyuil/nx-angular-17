@@ -9,13 +9,11 @@ import { RequestBuilder } from '../../request-builder';
 import { UserDto } from '../../models/user-dto';
 
 export interface UserControllerFindAll$Params {
-  'if-none-match': string;
 }
 
-export function userControllerFindAll(http: HttpClient, rootUrl: string, params: UserControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UserDto>>> {
+export function userControllerFindAll(http: HttpClient, rootUrl: string, params?: UserControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UserDto>>> {
   const rb = new RequestBuilder(rootUrl, userControllerFindAll.PATH, 'get');
   if (params) {
-    rb.header('if-none-match', params['if-none-match'], {});
   }
 
   return http.request(
