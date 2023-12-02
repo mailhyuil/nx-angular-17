@@ -1,6 +1,7 @@
 import {
   createAction,
   createFeature,
+  createFeatureSelector,
   createReducer,
   createSelector,
   on,
@@ -9,6 +10,8 @@ import {
 export type CountState = {
   count: number;
 };
+
+export const countFeatureKey = 'count';
 
 const initialState: CountState = {
   count: 0,
@@ -27,10 +30,6 @@ export const countLoadedFailureAction = createAction(
   '[Count] Count Loaded Failure'
 );
 
-export interface AppState {
-  count: CountState;
-}
-
 export const countReducer = createReducer(
   initialState,
   on(incrementAction, (state) => ({ count: state.count + 1 })),
@@ -43,12 +42,13 @@ export const countReducer = createReducer(
   on(countLoadedFailureAction, (_) => ({ count: 0 }))
 );
 
-export const selectCount = (state: AppState) => state.count;
+export const selectCount = createFeatureSelector<CountState>(countFeatureKey);
+
 export const countSelector = createSelector(
   selectCount,
   (selectedCount: CountState) => selectedCount.count
 );
-export const countFeatureKey = 'count';
+
 export const countFeature = createFeature({
   name: countFeatureKey,
   reducer: countReducer,

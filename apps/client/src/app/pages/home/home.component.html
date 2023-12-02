@@ -1,21 +1,21 @@
 <div class="flex justify-center p-2">
-  <h1 class="font-bold text-3xl">{{ count() }}</h1>
+  <h1 class="text-3xl font-bold">{{ count() }}</h1>
 </div>
 <div class="flex gap-2 p-2">
   <button
-    class="px-3 py-2 bg-blue-500 text-white font-bold rounded-lg"
+    class="px-3 py-2 font-bold text-white bg-blue-500 rounded-lg"
     (click)="increment()"
   >
     increment
   </button>
   <button
-    class="px-3 py-2 bg-blue-500 text-white font-bold rounded-lg"
+    class="px-3 py-2 font-bold text-white bg-blue-500 rounded-lg"
     (click)="decrement()"
   >
     decrement
   </button>
   <button
-    class="ml-auto px-3 py-2 bg-blue-500 text-white font-bold rounded-lg"
+    class="px-3 py-2 ml-auto font-bold text-white bg-blue-500 rounded-lg"
     (click)="loadCount()"
   >
     loadCount
@@ -27,7 +27,7 @@
   (ngSubmit)="submit()"
 >
   <input formControlName="name" class="p-2 border border-blue-200 rounded-lg" />
-  <button class="px-3 py-2 bg-red-500 text-white font-bold rounded-lg">
+  <button class="px-3 py-2 font-bold text-white bg-red-500 rounded-lg">
     submit
   </button>
 </form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
   FormControl,
@@ -7,33 +7,28 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
+
 import {
-  AppState,
   countSelector,
   decrementAction,
   incrementAction,
   loadCountAction,
-} from 'apps/client/src/store/count.feature';
-import { ControlValueAccessorDirective } from '../../directives/value-accessor.directive';
+} from '../../store/count.feature';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, ControlValueAccessorDirective],
+  imports: [FormsModule, ReactiveFormsModule],
 })
-export default class HomeComponent implements OnInit {
+export default class HomeComponent {
+  store = inject(Store);
+  count$ = this.store.select(countSelector);
+  count = toSignal(this.count$);
   formGroup = new FormGroup({
     name: new FormControl('', []),
   });
-  submit() {
-    console.log(this.formGroup.getRawValue());
-  }
-  count$ = this.store.select(countSelector);
-  count = toSignal(this.count$);
-  constructor(private readonly store: Store<AppState>) {}
-  async ngOnInit() {}
   increment() {
     this.store.dispatch(incrementAction());
   }
@@ -42,5 +37,8 @@ export default class HomeComponent implements OnInit {
   }
   loadCount() {
     this.store.dispatch(loadCountAction());
+  }
+  submit() {
+    console.log(this.formGroup.getRawValue());
   }
 }

@@ -8,9 +8,9 @@ import { Router, provideRouter, withViewTransitions } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideState, provideStore } from '@ngrx/store';
 import * as Sentry from '@sentry/angular-ivy';
-import { CountEffects } from '../store/count.effects';
-import { countFeature } from '../store/count.feature';
 import { appRoutes } from './app.routes';
+import { CountEffects } from './store/count.effects';
+import { countFeature } from './store/count.feature';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes, withViewTransitions()),

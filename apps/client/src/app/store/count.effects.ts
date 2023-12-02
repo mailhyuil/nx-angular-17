@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, of } from 'rxjs';
-import { HomeService } from '../app/pages/home/home.service';
+import { HomeService } from '../pages/home/home.service';
 @Injectable()
 export class CountEffects {
   constructor(
