@@ -1,5 +1,4 @@
-<p class="font-bold">second works!</p>
 <form [formGroup]="formGroup" (ngSubmit)="submit()">
-  <input type="file" (change)="onFilePicked($event)" />
+  <app-file-upload formControlName="file"></app-file-upload>
   <button type="submit">submit</button>
 </form>

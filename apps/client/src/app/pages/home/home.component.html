@@ -3,19 +3,19 @@
 </div>
 <div class="flex gap-2 p-2">
   <button
-    class="px-3 py-2 font-bold text-white bg-blue-500 rounded-lg"
+    class="rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
     (click)="increment()"
   >
     increment
   </button>
   <button
-    class="px-3 py-2 font-bold text-white bg-blue-500 rounded-lg"
+    class="rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
     (click)="decrement()"
   >
     decrement
   </button>
   <button
-    class="px-3 py-2 ml-auto font-bold text-white bg-blue-500 rounded-lg"
+    class="ml-auto rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
     (click)="loadCount()"
   >
     loadCount
@@ -26,8 +26,10 @@
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
 >
-  <input formControlName="name" class="p-2 border border-blue-200 rounded-lg" />
-  <button class="px-3 py-2 font-bold text-white bg-red-500 rounded-lg">
+  <input formControlName="name" class="rounded-lg border border-blue-200 p-2" />
+  <button class="rounded-lg bg-red-500 px-3 py-2 font-bold text-white">
     submit
   </button>
 </form>
+<textarea class="resize-none border"> </textarea>
+<button (click)="load()">load</button>

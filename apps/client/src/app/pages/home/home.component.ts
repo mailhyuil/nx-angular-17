@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
   FormControl,
@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
+import { ActivatedRoute } from '@angular/router';
+import { SpinnerService } from '../../services/spinner.service';
 import {
   countSelector,
   decrementAction,
@@ -22,13 +24,20 @@ import {
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule],
 })
-export default class HomeComponent {
+export default class HomeComponent implements OnInit {
   store = inject(Store);
   count$ = this.store.select(countSelector);
   count = toSignal(this.count$);
   formGroup = new FormGroup({
     name: new FormControl('', []),
   });
+  route = inject(ActivatedRoute);
+  spinnerService = inject(SpinnerService);
+  ngOnInit(): void {
+    this.route.data.subscribe(({ data }) => {
+      console.log(data);
+    });
+  }
   increment() {
     this.store.dispatch(incrementAction());
   }
@@ -40,5 +49,8 @@ export default class HomeComponent {
   }
   submit() {
     console.log(this.formGroup.getRawValue());
+  }
+  load() {
+    this.spinnerService.show();
   }
 }

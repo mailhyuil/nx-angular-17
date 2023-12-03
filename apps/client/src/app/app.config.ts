@@ -11,6 +11,7 @@ import * as Sentry from '@sentry/angular-ivy';
 import { appRoutes } from './app.routes';
 import { CountEffects } from './store/count.effects';
 import { countFeature } from './store/count.feature';
+import { provideAnimations } from '@angular/platform-browser/animations';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes, withViewTransitions()),
@@ -19,20 +20,21 @@ export const appConfig: ApplicationConfig = {
     provideState(countFeature),
     provideEffects(CountEffects),
     {
-      provide: ErrorHandler,
-      useValue: Sentry.createErrorHandler({
-        showDialog: true,
-      }),
+        provide: ErrorHandler,
+        useValue: Sentry.createErrorHandler({
+            showDialog: true,
+        }),
     },
     {
-      provide: Sentry.TraceService,
-      deps: [Router],
+        provide: Sentry.TraceService,
+        deps: [Router],
     },
     {
-      provide: APP_INITIALIZER,
-      useFactory: () => () => {},
-      deps: [Sentry.TraceService],
-      multi: true,
+        provide: APP_INITIALIZER,
+        useFactory: () => () => { },
+        deps: [Sentry.TraceService],
+        multi: true,
     },
-  ],
+    provideAnimations()
+],
 };
