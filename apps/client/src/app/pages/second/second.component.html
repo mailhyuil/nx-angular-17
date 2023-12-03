@@ -1,1 +1,5 @@
 <p class="font-bold">second works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <input type="file" (change)="onFilePicked($event)" />
+  <button type="submit">submit</button>
+</form>

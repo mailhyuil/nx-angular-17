@@ -1,13 +1,17 @@
 import { Module } from '@nestjs/common';
+import { FileModule } from './file/file.module';
 
-import { APP_GUARD, DiscoveryModule } from '@nestjs/core';
+import { APP_GUARD, APP_INTERCEPTOR, DiscoveryModule } from '@nestjs/core';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { memoryStorage } from 'multer';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 @Module({
   imports: [
+    FileModule,
     PrismaModule,
     UsersModule,
     DiscoveryModule,
@@ -40,6 +44,12 @@ import { UsersModule } from './users/users.module';
     {
       provide: APP_GUARD,
       useClass: ThrottlerGuard,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useValue: FileInterceptor('file', {
+        storage: memoryStorage(),
+      }),
     },
   ],
 })

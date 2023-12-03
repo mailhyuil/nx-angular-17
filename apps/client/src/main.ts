@@ -1,3 +1,4 @@
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import * as Sentry from '@sentry/angular-ivy';
 import AppComponent from './app/app.component';
@@ -20,6 +21,7 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 });
 
+enableProdMode(); // production mode로 설정해야 sentry가 정상적으로 동작함
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
   console.error(err)
 );
