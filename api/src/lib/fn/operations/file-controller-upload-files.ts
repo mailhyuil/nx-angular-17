@@ -7,11 +7,11 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 
-export interface FileControllerDownload$Params {
+export interface FileControllerUploadFiles$Params {
 }
 
-export function fileControllerDownload(http: HttpClient, rootUrl: string, params?: FileControllerDownload$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-  const rb = new RequestBuilder(rootUrl, fileControllerDownload.PATH, 'get');
+export function fileControllerUploadFiles(http: HttpClient, rootUrl: string, params?: FileControllerUploadFiles$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  const rb = new RequestBuilder(rootUrl, fileControllerUploadFiles.PATH, 'post');
   if (params) {
   }
 
@@ -25,4 +25,4 @@ export function fileControllerDownload(http: HttpClient, rootUrl: string, params
   );
 }
 
-fileControllerDownload.PATH = '/api/v1/file/{id}';
+fileControllerUploadFiles.PATH = '/api/v1/file/multiple';

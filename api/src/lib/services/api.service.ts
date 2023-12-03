@@ -11,10 +11,12 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { appControllerGetData } from '../fn/operations/app-controller-get-data';
 import { AppControllerGetData$Params } from '../fn/operations/app-controller-get-data';
-import { fileControllerDownload } from '../fn/operations/file-controller-download';
-import { FileControllerDownload$Params } from '../fn/operations/file-controller-download';
-import { fileControllerUpload } from '../fn/operations/file-controller-upload';
-import { FileControllerUpload$Params } from '../fn/operations/file-controller-upload';
+import { fileControllerUploadFile } from '../fn/operations/file-controller-upload-file';
+import { FileControllerUploadFile$Params } from '../fn/operations/file-controller-upload-file';
+import { fileControllerUploadFiles } from '../fn/operations/file-controller-upload-files';
+import { FileControllerUploadFiles$Params } from '../fn/operations/file-controller-upload-files';
+import { fileControllerUploadMultiFieldFiles } from '../fn/operations/file-controller-upload-multi-field-files';
+import { FileControllerUploadMultiFieldFiles$Params } from '../fn/operations/file-controller-upload-multi-field-files';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService extends BaseService {
@@ -47,52 +49,77 @@ export class ApiService extends BaseService {
     );
   }
 
-  /** Path part for operation `fileControllerDownload()` */
-  static readonly FileControllerDownloadPath = '/api/v1/file/{id}';
+  /** Path part for operation `fileControllerUploadFile()` */
+  static readonly FileControllerUploadFilePath = '/api/v1/file';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `fileControllerDownload()` instead.
+   * To access only the response body, use `fileControllerUploadFile()` instead.
    *
    * This method doesn't expect any request body.
    */
-  fileControllerDownload$Response(params?: FileControllerDownload$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return fileControllerDownload(this.http, this.rootUrl, params, context);
+  fileControllerUploadFile$Response(params?: FileControllerUploadFile$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return fileControllerUploadFile(this.http, this.rootUrl, params, context);
   }
 
   /**
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `fileControllerDownload$Response()` instead.
+   * To access the full response (for headers, for example), `fileControllerUploadFile$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  fileControllerDownload(params?: FileControllerDownload$Params, context?: HttpContext): Observable<void> {
-    return this.fileControllerDownload$Response(params, context).pipe(
+  fileControllerUploadFile(params?: FileControllerUploadFile$Params, context?: HttpContext): Observable<void> {
+    return this.fileControllerUploadFile$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
 
-  /** Path part for operation `fileControllerUpload()` */
-  static readonly FileControllerUploadPath = '/api/v1/file';
+  /** Path part for operation `fileControllerUploadFiles()` */
+  static readonly FileControllerUploadFilesPath = '/api/v1/file/multiple';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `fileControllerUpload()` instead.
+   * To access only the response body, use `fileControllerUploadFiles()` instead.
    *
    * This method doesn't expect any request body.
    */
-  fileControllerUpload$Response(params?: FileControllerUpload$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return fileControllerUpload(this.http, this.rootUrl, params, context);
+  fileControllerUploadFiles$Response(params?: FileControllerUploadFiles$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return fileControllerUploadFiles(this.http, this.rootUrl, params, context);
   }
 
   /**
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `fileControllerUpload$Response()` instead.
+   * To access the full response (for headers, for example), `fileControllerUploadFiles$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  fileControllerUpload(params?: FileControllerUpload$Params, context?: HttpContext): Observable<void> {
-    return this.fileControllerUpload$Response(params, context).pipe(
+  fileControllerUploadFiles(params?: FileControllerUploadFiles$Params, context?: HttpContext): Observable<void> {
+    return this.fileControllerUploadFiles$Response(params, context).pipe(
+      map((r: StrictHttpResponse<void>): void => r.body)
+    );
+  }
+
+  /** Path part for operation `fileControllerUploadMultiFieldFiles()` */
+  static readonly FileControllerUploadMultiFieldFilesPath = '/api/v1/file/multiple-fields';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `fileControllerUploadMultiFieldFiles()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  fileControllerUploadMultiFieldFiles$Response(params?: FileControllerUploadMultiFieldFiles$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return fileControllerUploadMultiFieldFiles(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `fileControllerUploadMultiFieldFiles$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  fileControllerUploadMultiFieldFiles(params?: FileControllerUploadMultiFieldFiles$Params, context?: HttpContext): Observable<void> {
+    return this.fileControllerUploadMultiFieldFiles$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
