@@ -17,6 +17,8 @@ import { fileControllerUploadFiles } from '../fn/operations/file-controller-uplo
 import { FileControllerUploadFiles$Params } from '../fn/operations/file-controller-upload-files';
 import { fileControllerUploadMultiFieldFiles } from '../fn/operations/file-controller-upload-multi-field-files';
 import { FileControllerUploadMultiFieldFiles$Params } from '../fn/operations/file-controller-upload-multi-field-files';
+import { paymentControllerCreate } from '../fn/operations/payment-controller-create';
+import { PaymentControllerCreate$Params } from '../fn/operations/payment-controller-create';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService extends BaseService {
@@ -45,6 +47,31 @@ export class ApiService extends BaseService {
    */
   appControllerGetData(params?: AppControllerGetData$Params, context?: HttpContext): Observable<void> {
     return this.appControllerGetData$Response(params, context).pipe(
+      map((r: StrictHttpResponse<void>): void => r.body)
+    );
+  }
+
+  /** Path part for operation `paymentControllerCreate()` */
+  static readonly PaymentControllerCreatePath = '/api/v1/payments';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `paymentControllerCreate()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  paymentControllerCreate$Response(params?: PaymentControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return paymentControllerCreate(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `paymentControllerCreate$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  paymentControllerCreate(params?: PaymentControllerCreate$Params, context?: HttpContext): Observable<void> {
+    return this.paymentControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }

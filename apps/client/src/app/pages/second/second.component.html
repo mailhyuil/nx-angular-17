@@ -1,4 +1,8 @@
 <form [formGroup]="formGroup" (ngSubmit)="submit()">
   <app-file-upload formControlName="file"></app-file-upload>
+  <app-segment formControlName="type">
+    <app-segment-option value="ga">가</app-segment-option>
+    <app-segment-option value="na">나</app-segment-option>
+  </app-segment>
   <button type="submit">submit</button>
 </form>

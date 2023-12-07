@@ -1,21 +1,34 @@
 import { Module } from '@nestjs/common';
+import { DeliveryModule } from './delivery/delivery.module';
 import { FileModule } from './file/file.module';
+import { PaymentModule } from './payment/payment.module';
 
+import { BullModule } from '@nestjs/bull';
 import { APP_GUARD, APP_INTERCEPTOR, DiscoveryModule } from '@nestjs/core';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { existsSync, mkdirSync } from 'fs';
 import { diskStorage } from 'multer';
+import { PrismaModule } from '../prisma/prisma.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 @Module({
   imports: [
+    DeliveryModule,
+    PaymentModule,
     FileModule,
     PrismaModule,
     UsersModule,
     DiscoveryModule,
+    EventEmitterModule.forRoot(),
+    BullModule.forRoot({
+      redis: {
+        host: 'localhost',
+        port: 6379,
+      },
+    }),
     ThrottlerModule.forRoot([
       {
         // default
