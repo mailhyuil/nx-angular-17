@@ -3,15 +3,26 @@ import {
   APP_INITIALIZER,
   ApplicationConfig,
   ErrorHandler,
+  importProvidersFrom,
 } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { Router, provideRouter, withViewTransitions } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideState, provideStore } from '@ngrx/store';
 import * as Sentry from '@sentry/angular-ivy';
+import { SocketIoModule } from 'ngx-socket-io';
+import { SocketIoConfig } from './../../../../node_modules/ngx-socket-io/src/config/socket-io.config.d';
 import { appRoutes } from './app.routes';
 import { CountEffects } from './store/count.effects';
 import { countFeature } from './store/count.feature';
-import { provideAnimations } from '@angular/platform-browser/animations';
+
+const config: SocketIoConfig = {
+  url: 'ws://localhost:8080',
+  options: {
+    transports: ['websocket'],
+  },
+};
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes, withViewTransitions()),
@@ -20,21 +31,22 @@ export const appConfig: ApplicationConfig = {
     provideState(countFeature),
     provideEffects(CountEffects),
     {
-        provide: ErrorHandler,
-        useValue: Sentry.createErrorHandler({
-            showDialog: true,
-        }),
+      provide: ErrorHandler,
+      useValue: Sentry.createErrorHandler({
+        showDialog: true,
+      }),
     },
     {
-        provide: Sentry.TraceService,
-        deps: [Router],
+      provide: Sentry.TraceService,
+      deps: [Router],
     },
     {
-        provide: APP_INITIALIZER,
-        useFactory: () => () => { },
-        deps: [Sentry.TraceService],
-        multi: true,
+      provide: APP_INITIALIZER,
+      useFactory: () => () => {},
+      deps: [Sentry.TraceService],
+      multi: true,
     },
-    provideAnimations()
-],
+    provideAnimations(),
+    importProvidersFrom([SocketIoModule.forRoot(config)]),
+  ],
 };

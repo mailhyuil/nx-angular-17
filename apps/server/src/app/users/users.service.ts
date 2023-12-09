@@ -58,15 +58,48 @@ export class UserService {
     return plainToInstance(UserDto, updated);
   }
 
-  async remove(id: string) {
+  async softDelete(id: string) {
     await this.findByIdOrThrow(id);
     const deleted = await this.prisma.user
-      .delete({
+      .update({
         where: { id },
+        data: {
+          deletedAt: new Date(),
+        },
       })
       .catch((e) => {
         throw new BadRequestException(e, 'User을 삭제할 수 없습니다.');
       });
     return deleted;
+  }
+
+  async hardDeleteMany() {
+    const deleted = await this.prisma.user
+      .deleteMany({
+        where: {
+          deletedAt: {
+            not: null,
+          },
+        },
+      })
+      .catch((e) => {
+        throw new BadRequestException(e, 'User을 삭제할 수 없습니다.');
+      });
+    return deleted;
+  }
+
+  async restore(id: string) {
+    await this.findByIdOrThrow(id);
+    const restored = await this.prisma.user
+      .update({
+        where: { id },
+        data: {
+          deletedAt: null,
+        },
+      })
+      .catch((e) => {
+        throw new BadRequestException(e, 'User을 복구할 수 없습니다.');
+      });
+    return plainToInstance(UserDto, restored);
   }
 }

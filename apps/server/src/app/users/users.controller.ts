@@ -63,6 +63,6 @@ export class UserController {
     summary: 'User 삭제',
   })
   async remove(@Param('id') id: string) {
-    return await this.userService.remove(id);
+    return await this.userService.softDelete(id);
   }
 }
