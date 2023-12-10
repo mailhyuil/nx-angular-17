@@ -1,4 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  inject,
+  signal,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
   FormControl,
@@ -8,6 +14,7 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { SpinnerService } from '../../services/spinner.service';
 import {
@@ -33,6 +40,10 @@ export default class HomeComponent implements OnInit {
   });
   route = inject(ActivatedRoute);
   spinnerService = inject(SpinnerService);
+  constructor(
+    private readonly httpClient: HttpClient,
+    private readonly cdr: ChangeDetectorRef
+  ) {}
   ngOnInit(): void {
     this.route.data.subscribe(({ data }) => {
       console.log(data);
@@ -52,5 +63,17 @@ export default class HomeComponent implements OnInit {
   }
   load() {
     this.spinnerService.show();
+  }
+  stream = signal<string>('hello');
+  getStreamString() {
+    this.httpClient
+      .get('http://localhost:3000/api/v1/stream', { responseType: 'blob' })
+      .subscribe((blob) => {
+        const reader = new FileReader();
+        reader.onload = (event: any) => {
+          this.stream.set(event.target.result);
+        };
+        reader.readAsText(blob);
+      });
   }
 }

@@ -112,6 +112,7 @@
     "morgan": "^1.10.0",
     "ng-openapi-gen": "^0.50.4",
     "ngx-socket-io": "^4.6.1",
+    "redis": "^4.6.11",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "sharp": "^0.32.6",

@@ -4,11 +4,6 @@
 generator client {
   provider = "prisma-client-js"
 }
-generator graphql {
-  provider = "graphql-schema-generator"
-  createCRUD = "true"
-  output = "../apps/server/src"
-}
 
 datasource db {
   provider = "postgresql"

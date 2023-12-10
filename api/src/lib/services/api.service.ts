@@ -11,6 +11,8 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { appControllerGetData } from '../fn/operations/app-controller-get-data';
 import { AppControllerGetData$Params } from '../fn/operations/app-controller-get-data';
+import { appControllerGetStream } from '../fn/operations/app-controller-get-stream';
+import { AppControllerGetStream$Params } from '../fn/operations/app-controller-get-stream';
 import { fileControllerUploadFile } from '../fn/operations/file-controller-upload-file';
 import { FileControllerUploadFile$Params } from '../fn/operations/file-controller-upload-file';
 import { fileControllerUploadFiles } from '../fn/operations/file-controller-upload-files';
@@ -47,6 +49,31 @@ export class ApiService extends BaseService {
    */
   appControllerGetData(params?: AppControllerGetData$Params, context?: HttpContext): Observable<void> {
     return this.appControllerGetData$Response(params, context).pipe(
+      map((r: StrictHttpResponse<void>): void => r.body)
+    );
+  }
+
+  /** Path part for operation `appControllerGetStream()` */
+  static readonly AppControllerGetStreamPath = '/api/v1/stream';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `appControllerGetStream()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  appControllerGetStream$Response(params?: AppControllerGetStream$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return appControllerGetStream(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `appControllerGetStream$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  appControllerGetStream(params?: AppControllerGetStream$Params, context?: HttpContext): Observable<void> {
+    return this.appControllerGetStream$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }

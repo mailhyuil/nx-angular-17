@@ -3,6 +3,7 @@ import { ChatModule } from './chat/chat.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { FileModule } from './file/file.module';
 import { PaymentModule } from './payment/payment.module';
+import { RedisModule } from './redis/redis.module';
 
 import { BullModule } from '@nestjs/bull';
 import { APP_GUARD, APP_INTERCEPTOR, DiscoveryModule } from '@nestjs/core';
@@ -17,6 +18,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 @Module({
   imports: [
+    RedisModule,
     ChatModule,
     DeliveryModule,
     PaymentModule,
