@@ -15,6 +15,7 @@ import {
 import { Store } from '@ngrx/store';
 
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { SpinnerService } from '../../services/spinner.service';
 import {
@@ -42,7 +43,8 @@ export default class HomeComponent implements OnInit {
   spinnerService = inject(SpinnerService);
   constructor(
     private readonly httpClient: HttpClient,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly domSanitizer: DomSanitizer
   ) {}
   ngOnInit(): void {
     this.route.data.subscribe(({ data }) => {
@@ -64,16 +66,25 @@ export default class HomeComponent implements OnInit {
   load() {
     this.spinnerService.show();
   }
-  stream = signal<string>('hello');
+  url = signal<string>('');
+
+  // big size mp4 video url over 1gb
+  bigSizeVideoUrl = 'https';
+
   getStreamString() {
     this.httpClient
-      .get('http://localhost:3000/api/v1/stream', { responseType: 'blob' })
-      .subscribe((blob) => {
-        const reader = new FileReader();
-        reader.onload = (event: any) => {
-          this.stream.set(event.target.result);
-        };
-        reader.readAsText(blob);
+      .get('http://localhost:3000/api/v1/stream', {
+        responseType: 'blob',
+      })
+      .subscribe({
+        next: (blob) => {
+          console.log(blob.size);
+          const url = URL.createObjectURL(blob);
+          this.url.set(url);
+        },
+        error: (err) => {
+          console.log(err);
+        },
       });
   }
 }

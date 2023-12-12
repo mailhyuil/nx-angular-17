@@ -1,8 +1,11 @@
-<form [formGroup]="formGroup" (ngSubmit)="submit()">
-  <app-file-upload formControlName="file"></app-file-upload>
-  <app-segment formControlName="type">
-    <app-segment-option value="ga">가</app-segment-option>
-    <app-segment-option value="na">나</app-segment-option>
-  </app-segment>
-  <button type="submit">submit</button>
+<form class="flex flex-col gap-2 p-5">
+  <!-- <app-file-upload formControlName="file"></app-file-upload> -->
+  <input (change)="onFileChange($event)" type="file" />
+  <button
+    class="rounded-lg bg-yellow-500 px-2 py-1 font-bold text-white"
+    type="submit"
+    (click)="submit()"
+  >
+    submit
+  </button>
 </form>

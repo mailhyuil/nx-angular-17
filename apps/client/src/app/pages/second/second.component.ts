@@ -31,20 +31,28 @@ export default class SecondComponent {
     file: new FormControl<string>('', [Validators.required]),
     type: new FormControl<string>('ga', [Validators.required]),
   });
+  formData = new FormData();
   @ViewChild(FileUploadComponent) fileUploadComponent!: FileUploadComponent;
   constructor(private readonly httpClient: HttpClient) {}
-
+  onFileChange(e: Event) {
+    const target = e.target as HTMLInputElement;
+    const file = target.files?.[0];
+    console.log(file);
+    if (file) {
+      this.formData.set('file', file);
+    }
+  }
   submit() {
-    this.fileUploadComponent.upload();
-    const body = this.formGroup.value;
-    console.log(body);
-    // this.httpClient.post('http://localhost:3000/api/v1/file', body).subscribe({
-    //   next: (value) => {
-    //     console.log(value);
-    //   },
-    //   error: (error) => {
-    //     console.log(error);
-    //   },
-    // });
+    console.log(this.formData);
+    this.httpClient
+      .post('http://localhost:3000/api/v1/file', this.formData)
+      .subscribe({
+        next: (value) => {
+          console.log(value);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 }

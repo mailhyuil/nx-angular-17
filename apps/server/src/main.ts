@@ -8,6 +8,7 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import compression from 'compression';
+import busboy from 'connect-busboy';
 import cookieParser from 'cookie-parser';
 import { writeFile } from 'fs';
 import helmet from 'helmet';
@@ -16,13 +17,13 @@ import morgan from 'morgan';
 import { NgOpenApiGen } from 'ng-openapi-gen';
 import { join } from 'path';
 import { AppModule } from './app/app.module';
-
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.use(cookieParser());
   app.use(compression());
   app.use(helmet());
   app.use(morgan('dev'));
+  app.use(busboy());
   app.enableCors();
   app.useStaticAssets(join(__dirname, './public'));
 

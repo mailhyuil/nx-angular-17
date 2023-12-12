@@ -21,17 +21,12 @@ export class EtagInterceptor implements NestInterceptor {
     return next.handle().pipe(
       map((data) => {
         response.header('cache-control', 'no-cache, must-revalidate');
-        console.log('Generating ETag.', data);
         const currentEtag = etag(JSON.stringify(data), { weak: true }); // Generate the ETag.
-        console.log('ETag generated.', currentEtag);
-        console.log('oldEtag', oldEtag);
 
         if (oldEtag && oldEtag === currentEtag) {
-          console.log('ETag matches. Sending 304 response.');
           response.status(304); // Send a 304 response if the ETags match.
           return null; // Returning null to avoid further processing.
         } else {
-          console.log('ETag does not match. Proceeding with the response.');
           return data; // Proceed with the response.
         }
       })
