@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { MethodDecorator } from '../../decorators/method.decorator';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -14,6 +15,7 @@ export default class ChatComponent implements OnInit {
       console.log(data);
     });
   }
+  @MethodDecorator()
   send() {
     console.log('send');
     this.socket.emit('chat', 'Hello World!');

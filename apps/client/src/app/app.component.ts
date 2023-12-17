@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 @Component({
@@ -8,5 +9,15 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export default class AppComponent implements OnInit {
+  private static _httpClient?: HttpClient;
+
+  constructor(private readonly httpClient: HttpClient) {
+    if (this.httpClient) {
+      AppComponent._httpClient = this.httpClient;
+    }
+  }
+  static getHttpClient() {
+    return AppComponent._httpClient;
+  }
   ngOnInit(): void {}
 }

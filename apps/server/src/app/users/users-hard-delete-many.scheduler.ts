@@ -10,6 +10,5 @@ export class UsersHardDeleteManySchedulerService {
   @Cron(CronExpression.EVERY_2ND_MONTH)
   async hardDelete() {
     console.log('매일 0시 0분 0초마다 실행됩니다.');
-    return await this.userService.hardDeleteMany();
   }
 }

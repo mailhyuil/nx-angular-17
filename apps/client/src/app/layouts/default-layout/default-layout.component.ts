@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -17,11 +17,17 @@ import {
   standalone: true,
   imports: [CommonModule, RouterModule],
 })
-export default class DefaultLayoutComponent {
+export default class DefaultLayoutComponent implements AfterViewInit {
+  @ViewChild('outlet') outlet?: ElementRef<HTMLDivElement>;
   fetchStatus?: 'loading' | 'delayed' | 'success' | 'error';
   constructor(private router: Router) {
     router.events.subscribe((e: any) => {
       this.checkRouterEvent(e);
+    });
+  }
+  ngAfterViewInit(): void {
+    this.outlet?.nativeElement.addEventListener('scroll', (e: Event) => {
+      console.log((e.target as any)['scrollTop']);
     });
   }
 

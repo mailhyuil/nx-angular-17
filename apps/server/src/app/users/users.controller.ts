@@ -25,7 +25,11 @@ export class UserController {
     isArray: true,
   })
   async findAll() {
-    return await this.userService.findAll();
+    return await this.userService.findAll({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
   }
 
   @Get(':id')
@@ -36,7 +40,9 @@ export class UserController {
     type: UserDto,
   })
   async findById(@Param('id') id: string) {
-    return await this.userService.findByIdOrThrow(id);
+    return await this.userService.findById({
+      where: { id },
+    });
   }
 
   @Post()
@@ -47,7 +53,9 @@ export class UserController {
     type: CreateUserDto,
   })
   async create(@Body() body: CreateUserDto) {
-    return await this.userService.create(body);
+    return await this.userService.create({
+      data: body,
+    });
   }
 
   @Patch(':id')
@@ -55,7 +63,10 @@ export class UserController {
     summary: 'User 수정',
   })
   async update(@Param('id') id: string, @Body() body: UpdateUserDto) {
-    return await this.userService.update(id, body);
+    return await this.userService.update({
+      where: { id },
+      data: body,
+    });
   }
 
   @Delete(':id')
@@ -63,6 +74,8 @@ export class UserController {
     summary: 'User 삭제',
   })
   async remove(@Param('id') id: string) {
-    return await this.userService.softDelete(id);
+    return await this.userService.delete({
+      where: { id },
+    });
   }
 }

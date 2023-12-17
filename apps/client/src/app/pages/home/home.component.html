@@ -34,10 +34,6 @@
 <textarea class="resize-none border"> </textarea>
 <button (click)="load()">load</button>
 <button (click)="getStreamString()">get stream</button>
-<video
-  [autoplay]="true"
-  [controls]="true"
-  [src]="url()"
-  width="500"
-  height="500"
-></video>
+<div>
+  <app-video></app-video>
+</div>

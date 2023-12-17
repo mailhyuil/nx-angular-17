@@ -15,8 +15,8 @@ import {
 import { Store } from '@ngrx/store';
 
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { VideoComponent } from '../../components/video/video.component';
 import { SpinnerService } from '../../services/spinner.service';
 import {
   countSelector,
@@ -30,7 +30,7 @@ import {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, VideoComponent],
 })
 export default class HomeComponent implements OnInit {
   store = inject(Store);
@@ -41,11 +41,13 @@ export default class HomeComponent implements OnInit {
   });
   route = inject(ActivatedRoute);
   spinnerService = inject(SpinnerService);
+  hi = 'hi';
   constructor(
     private readonly httpClient: HttpClient,
-    private readonly cdr: ChangeDetectorRef,
-    private readonly domSanitizer: DomSanitizer
-  ) {}
+    private readonly cdr: ChangeDetectorRef
+  ) {
+    console.log(this.hi);
+  }
   ngOnInit(): void {
     this.route.data.subscribe(({ data }) => {
       console.log(data);
