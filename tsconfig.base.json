@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@app/api": ["api/src/index.ts"]
-    }
+      "@app/api": ["api/src/index.ts"],
+      "@hyuil/libs": ["libs/src/index.ts"]
+    },
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]
 }

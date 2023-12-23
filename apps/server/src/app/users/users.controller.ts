@@ -1,3 +1,4 @@
+import { CreateUserDto, UpdateUserDto, UserDto } from '@hyuil/libs';
 import {
   Body,
   Controller,
@@ -8,9 +9,8 @@ import {
   Post,
 } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { CreateUserDto, UpdateUserDto, UserDto } from './users.dto';
+import { plainToInstance } from 'class-transformer';
 import { UserService } from './users.service';
-
 @ApiTags('User')
 @Controller({ path: 'users', version: '1' })
 export class UserController {
@@ -25,11 +25,12 @@ export class UserController {
     isArray: true,
   })
   async findAll() {
-    return await this.userService.findAll({
+    const found = await this.userService.findAll({
       orderBy: {
         createdAt: 'desc',
       },
     });
+    return plainToInstance(UserDto, found);
   }
 
   @Get(':id')

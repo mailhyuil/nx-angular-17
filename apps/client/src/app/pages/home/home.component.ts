@@ -16,6 +16,7 @@ import { Store } from '@ngrx/store';
 
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { UserDto } from '@hyuil/libs';
 import { VideoComponent } from '../../components/video/video.component';
 import { SpinnerService } from '../../services/spinner.service';
 import {
@@ -37,7 +38,8 @@ export default class HomeComponent implements OnInit {
   count$ = this.store.select(countSelector);
   count = toSignal(this.count$);
   formGroup = new FormGroup({
-    name: new FormControl('', []),
+    username: new FormControl('', []),
+    password: new FormControl('', []),
   });
   route = inject(ActivatedRoute);
   spinnerService = inject(SpinnerService);
@@ -48,10 +50,14 @@ export default class HomeComponent implements OnInit {
   ) {
     console.log(this.hi);
   }
+  users: UserDto[] = [];
   ngOnInit(): void {
     this.route.data.subscribe(({ data }) => {
       console.log(data);
     });
+    this.httpClient
+      .get<UserDto[]>('http://localhost:3000/api/v1/users')
+      .subscribe((res) => (this.users = res));
   }
   increment() {
     this.store.dispatch(incrementAction());
@@ -63,7 +69,11 @@ export default class HomeComponent implements OnInit {
     this.store.dispatch(loadCountAction());
   }
   submit() {
-    console.log(this.formGroup.getRawValue());
+    this.httpClient
+      .post('http://localhost:3000/api/v1/users', this.formGroup.value)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
   load() {
     this.spinnerService.show();

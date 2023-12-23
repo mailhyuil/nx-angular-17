@@ -26,11 +26,22 @@
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
 >
-  <input formControlName="name" class="rounded-lg border border-blue-200 p-2" />
+  <input
+    formControlName="username"
+    class="rounded-lg border border-blue-200 p-2"
+  />
+  <input
+    formControlName="password"
+    class="rounded-lg border border-blue-200 p-2"
+  />
   <button class="rounded-lg bg-red-500 px-3 py-2 font-bold text-white">
     submit
   </button>
 </form>
+@for(i of users;track i.id){
+<div>{{ i.username }}</div>
+<div>{{ i.password }}</div>
+}
 <textarea class="resize-none border"> </textarea>
 <button (click)="load()">load</button>
 <button (click)="getStreamString()">get stream</button>
