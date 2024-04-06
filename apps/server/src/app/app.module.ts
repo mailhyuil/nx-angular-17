@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { AddressModule } from './address/address.module';
 import { ChatModule } from './chat/chat.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { FileModule } from './file/file.module';
@@ -18,6 +19,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 @Module({
   imports: [
+    AddressModule,
     RedisModule,
     ChatModule,
     DeliveryModule,
