@@ -1,102 +1,59 @@
+import { Component, OnInit, inject } from '@angular/core';
 import {
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  inject,
-  signal,
-} from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import {
-  FormControl,
-  FormGroup,
+  FormBuilder,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
-import { Store } from '@ngrx/store';
 
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import { UserDto } from '@hyuil/libs';
+import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
+import FileUploadComponent from '../../components/file-upload/file-upload.component';
 import { VideoComponent } from '../../components/video/video.component';
-import { SpinnerService } from '../../services/spinner.service';
-import {
-  countSelector,
-  decrementAction,
-  incrementAction,
-  loadCountAction,
-} from '../../store/count.feature';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, VideoComponent],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    VideoComponent,
+    FileUploadComponent,
+  ],
 })
 export default class HomeComponent implements OnInit {
-  store = inject(Store);
-  count$ = this.store.select(countSelector);
-  count = toSignal(this.count$);
-  formGroup = new FormGroup({
-    username: new FormControl('', []),
-    password: new FormControl('', []),
-  });
-  route = inject(ActivatedRoute);
-  spinnerService = inject(SpinnerService);
-  hi = 'hi';
-  constructor(
-    private readonly httpClient: HttpClient,
-    private readonly cdr: ChangeDetectorRef
-  ) {
-    console.log(this.hi);
-  }
-  users: UserDto[] = [];
-  ngOnInit(): void {
-    this.route.data.subscribe(({ data }) => {
-      console.log(data);
-    });
-    this.httpClient
-      .get<UserDto[]>('http://localhost:3000/api/v1/users')
-      .subscribe((res) => (this.users = res));
-  }
-  increment() {
-    this.store.dispatch(incrementAction());
-  }
-  decrement() {
-    this.store.dispatch(decrementAction());
-  }
-  loadCount() {
-    this.store.dispatch(loadCountAction());
-  }
-  submit() {
-    this.httpClient
-      .post('http://localhost:3000/api/v1/users', this.formGroup.value)
-      .subscribe((res) => {
-        console.log(res);
-      });
-  }
-  load() {
-    this.spinnerService.show();
-  }
-  url = signal<string>('');
+  fb = inject(FormBuilder);
+  file = this.fb.control<File | null>(null, [Validators.required]);
+  http = inject(HttpClient);
 
-  // big size mp4 video url over 1gb
-  bigSizeVideoUrl = 'https';
-
-  getStreamString() {
-    this.httpClient
-      .get('http://localhost:3000/api/v1/stream', {
+  constructor() {
+    this.http
+      .get('http://localhost:3000/api/v1', {
         responseType: 'blob',
+        observe: 'events',
+        reportProgress: true,
       })
-      .subscribe({
-        next: (blob) => {
-          console.log(blob.size);
-          const url = URL.createObjectURL(blob);
-          this.url.set(url);
-        },
-        error: (err) => {
-          console.log(err);
-        },
+      .subscribe((event) => {
+        if (event.type === HttpEventType.DownloadProgress) {
+          // 진행률
+          const progress = Math.round((100 * event.loaded) / event.total!);
+          console.log(`File is ${progress}% loaded.`);
+        } else if (event instanceof HttpResponse) {
+          // 완료
+          console.log('File is completely loaded!');
+        }
       });
+  }
+
+  ngOnInit(): void {}
+  submit() {
+    const formData = new FormData();
+    const file = this.file.value;
+    if (!file) return;
+    formData.append('file', file);
+    this.http.post('http://localhost:3000/api/v1', formData).subscribe(() => {
+      console.log('file uploaded');
+    });
   }
 }

@@ -1,50 +1,5 @@
-<div class="flex justify-center p-2">
-  <h1 class="text-3xl font-bold">{{ count() }}</h1>
-</div>
-<div class="flex gap-2 p-2">
-  <button
-    class="rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
-    (click)="increment()"
-  >
-    increment
-  </button>
-  <button
-    class="rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
-    (click)="decrement()"
-  >
-    decrement
-  </button>
-  <button
-    class="ml-auto rounded-lg bg-blue-500 px-3 py-2 font-bold text-white"
-    (click)="loadCount()"
-  >
-    loadCount
-  </button>
-</div>
-<form
-  class="flex flex-col items-center gap-2"
-  [formGroup]="formGroup"
-  (ngSubmit)="submit()"
->
-  <input
-    formControlName="username"
-    class="rounded-lg border border-blue-200 p-2"
-  />
-  <input
-    formControlName="password"
-    class="rounded-lg border border-blue-200 p-2"
-  />
-  <button class="rounded-lg bg-red-500 px-3 py-2 font-bold text-white">
-    submit
-  </button>
-</form>
-@for(i of users;track i.id){
-<div>{{ i.username }}</div>
-<div>{{ i.password }}</div>
-}
-<textarea class="resize-none border"> </textarea>
-<button (click)="load()">load</button>
-<button (click)="getStreamString()">get stream</button>
+<app-file-upload [formControl]="file"></app-file-upload>
+<button (click)="submit()">upload</button>
 <div>
   <app-video></app-video>
 </div>

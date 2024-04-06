@@ -1,37 +1,58 @@
-import { Controller, Get, Req, Res, StreamableFile } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Req,
+  Res,
+  StreamableFile,
+} from '@nestjs/common';
 
 import { Request, Response } from 'express';
-import { createReadStream } from 'fs';
+import fs, { createReadStream, createWriteStream } from 'fs';
 import { join } from 'path';
-import { Etag } from '../decorators/etag.decorator';
 import { AppService } from './app.service';
+
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getData(@Res() res: Response, @Req() req: Request) {
-    return 999;
+  getFile(@Res({ passthrough: true }) res: Response): StreamableFile {
+    const filepath = join(process.cwd(), 'sample.mp4');
+    const file = createReadStream(filepath);
+    // 이하 추가된 내용입니다.
+    const stat = fs.statSync(filepath);
+    res.set({
+      'Content-Type': 'video/mp4',
+      'Content-Disposition': 'attachment; filename="sample.mp4"',
+      'Content-Length': stat.size,
+    });
+    return new StreamableFile(file);
   }
 
-  @Etag()
-  @Get('stream')
-  getStream(@Res({ passthrough: true }) res: Response) {
-    const start = 0;
-    const end = 3000000;
-    // const end = 158008374;
-    const chunksize = end - start + 1;
-
-    const file = createReadStream(join(__dirname, 'assets', 'sample.mp4'), {
-      start,
-      end,
+  @Post()
+  uploadFile(@Req() req: Request) {
+    // write file
+    const ws = createWriteStream(join(__dirname, '../../..', 'sample.mp4'));
+    ws.on('finish', () => {
+      console.log('File Written');
+      ws.close();
     });
-    res.header('Content-Range', `bytes ${start}-${end}/${chunksize}`);
-    res.header('Accept-Ranges', 'bytes');
-    res.header('Content-Length', chunksize + '');
-    res.header('Content-Type', 'video/mp4');
-    return new StreamableFile(file, {
-      type: 'video/mp4',
+    // busboy
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (name, file, info) {
+      const { filename, encoding, mimeType } = info;
+      file.on('data', (data) => {
+        console.log(data); // stream data
+        // write file in /assets
+        ws.write(data);
+      });
+      file.on('end', () => {
+        console.log('File [' + filename + '] Finished');
+      });
+      file.on('error', (err) => {
+        console.log('Error', err);
+      });
     });
   }
 }
