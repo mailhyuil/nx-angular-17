@@ -2,11 +2,10 @@ import { provideHttpClient } from '@angular/common/http';
 import {
   APP_INITIALIZER,
   ApplicationConfig,
-  ErrorHandler,
   importProvidersFrom,
 } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { Router, provideRouter, withViewTransitions } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideState, provideStore } from '@ngrx/store';
 import * as Sentry from '@sentry/angular-ivy';
@@ -30,16 +29,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideState(countFeature),
     provideEffects(CountEffects),
-    {
-      provide: ErrorHandler,
-      useValue: Sentry.createErrorHandler({
-        showDialog: true,
-      }),
-    },
-    {
-      provide: Sentry.TraceService,
-      deps: [Router],
-    },
     {
       provide: APP_INITIALIZER,
       useFactory: () => () => {},

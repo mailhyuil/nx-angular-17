@@ -1,7 +1,7 @@
 import { createClient } from 'redis';
 export const REDIS_CLIENT = Symbol('REDIS_CLIENT');
 export type RedisClient = ReturnType<typeof createClient>;
-export const redisProvider = {
+export const RedisProvider = {
   provide: REDIS_CLIENT,
   useFactory: async () => {
     const client = createClient({

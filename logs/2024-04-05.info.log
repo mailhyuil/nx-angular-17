@@ -1,0 +1,404 @@
+2024-04-05 22:34:20 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:34:20 info: AppController {/api/v1}:
+2024-04-05 22:34:20 info: Mapped {/api/v1, GET} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:34:20 info: DeliveryController {/api/v1}:
+2024-04-05 22:34:20 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:34:20 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:34:20 info: FileController {/api/v1/file}:
+2024-04-05 22:34:20 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:34:20 info: UserController {/api/v1/users}:
+2024-04-05 22:34:20 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:34:20 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:34:20 info: Nest application successfully started
+2024-04-05 22:34:20 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:35:23 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:35:23 info: AppController {/api/v1}:
+2024-04-05 22:35:23 info: Mapped {/api/v1, GET} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:35:23 info: DeliveryController {/api/v1}:
+2024-04-05 22:35:23 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:35:23 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:35:23 info: FileController {/api/v1/file}:
+2024-04-05 22:35:23 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:35:23 info: UserController {/api/v1/users}:
+2024-04-05 22:35:23 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:35:23 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:35:23 info: Nest application successfully started
+2024-04-05 22:35:23 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:39:18 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:39:18 info: AppController {/api/v1}:
+2024-04-05 22:39:18 info: Mapped {/api/v1, GET} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:39:18 info: DeliveryController {/api/v1}:
+2024-04-05 22:39:18 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:39:18 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:39:18 info: FileController {/api/v1/file}:
+2024-04-05 22:39:18 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:39:18 info: UserController {/api/v1/users}:
+2024-04-05 22:39:18 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:39:18 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:39:18 info: Nest application successfully started
+2024-04-05 22:39:18 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:39:46 info: ::1 - - [05/Apr/2024:13:39:46 +0000] "GET /api/v1 HTTP/1.1" 200 23 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:46 info: ::1 - - [05/Apr/2024:13:39:46 +0000] "GET /favicon.ico HTTP/1.1" 404 74 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:49 info: ::1 - - [05/Apr/2024:13:39:49 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:50 info: ::1 - - [05/Apr/2024:13:39:50 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:50 info: ::1 - - [05/Apr/2024:13:39:50 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:50 info: ::1 - - [05/Apr/2024:13:39:50 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:51 info: ::1 - - [05/Apr/2024:13:39:51 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:52 info: ::1 - - [05/Apr/2024:13:39:52 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:53 info: ::1 - - [05/Apr/2024:13:39:53 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:39:54 info: ::1 - - [05/Apr/2024:13:39:54 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:42:59 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:42:59 info: AppController {/api/v1}:
+2024-04-05 22:42:59 info: Mapped {/api/v1, GET} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:42:59 info: DeliveryController {/api/v1}:
+2024-04-05 22:42:59 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:42:59 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:42:59 info: FileController {/api/v1/file}:
+2024-04-05 22:42:59 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:42:59 info: UserController {/api/v1/users}:
+2024-04-05 22:42:59 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:42:59 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:42:59 info: Nest application successfully started
+2024-04-05 22:42:59 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:43:05 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:43:05 info: AppController {/api/v1}:
+2024-04-05 22:43:05 info: Mapped {/api/v1, GET} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:43:05 info: DeliveryController {/api/v1}:
+2024-04-05 22:43:05 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:43:05 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:43:05 info: FileController {/api/v1/file}:
+2024-04-05 22:43:05 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:43:05 info: UserController {/api/v1/users}:
+2024-04-05 22:43:05 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:43:05 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:43:05 info: Nest application successfully started
+2024-04-05 22:43:05 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:44:45 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:44:45 info: AppController {/api/v1}:
+2024-04-05 22:44:45 info: Mapped {/api/v1, GET} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:44:45 info: DeliveryController {/api/v1}:
+2024-04-05 22:44:45 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:44:45 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:44:45 info: FileController {/api/v1/file}:
+2024-04-05 22:44:45 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:44:45 info: UserController {/api/v1/users}:
+2024-04-05 22:44:45 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:44:45 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:44:45 info: Nest application successfully started
+2024-04-05 22:44:45 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:45:35 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:45:36 info: AppController {/api/v1}:
+2024-04-05 22:45:36 info: Mapped {/api/v1, GET} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:45:36 info: DeliveryController {/api/v1}:
+2024-04-05 22:45:36 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:45:36 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:45:36 info: FileController {/api/v1/file}:
+2024-04-05 22:45:36 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:45:36 info: UserController {/api/v1/users}:
+2024-04-05 22:45:36 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:45:36 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:45:36 info: Nest application successfully started
+2024-04-05 22:45:36 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:46:44 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:46:44 info: AppController {/api/v1}:
+2024-04-05 22:46:44 info: Mapped {/api/v1, GET} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:46:44 info: DeliveryController {/api/v1}:
+2024-04-05 22:46:44 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:46:44 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:46:44 info: FileController {/api/v1/file}:
+2024-04-05 22:46:44 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:46:44 info: UserController {/api/v1/users}:
+2024-04-05 22:46:44 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:46:44 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:46:44 info: Nest application successfully started
+2024-04-05 22:47:07 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:47:07 info: AppController {/api/v1}:
+2024-04-05 22:47:07 info: Mapped {/api/v1, GET} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:47:07 info: DeliveryController {/api/v1}:
+2024-04-05 22:47:07 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:47:07 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:47:07 info: FileController {/api/v1/file}:
+2024-04-05 22:47:07 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:47:07 info: UserController {/api/v1/users}:
+2024-04-05 22:47:07 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:47:07 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:47:07 info: Nest application successfully started
+2024-04-05 22:47:07 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:47:40 info: Starting Nest application...
+2024-04-05 22:47:40 info: PrismaModule dependencies initialized
+2024-04-05 22:47:40 info: DiscoveryModule dependencies initialized
+2024-04-05 22:47:40 info: PaymentModule dependencies initialized
+2024-04-05 22:47:40 info: UsersModule dependencies initialized
+2024-04-05 22:47:40 info: BullModule dependencies initialized
+2024-04-05 22:47:40 info: ScheduleModule dependencies initialized
+2024-04-05 22:47:40 info: EventEmitterModule dependencies initialized
+2024-04-05 22:47:40 info: FileModule dependencies initialized
+2024-04-05 22:47:40 info: BullModule dependencies initialized
+2024-04-05 22:47:40 info: DeliveryModule dependencies initialized
+2024-04-05 22:47:40 info: RedisModule dependencies initialized
+2024-04-05 22:47:40 info: AppModule dependencies initialized
+2024-04-05 22:47:40 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:47:40 info: AppController {/api/v1}:
+2024-04-05 22:47:40 info: Mapped {/api/v1, GET} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:47:40 info: DeliveryController {/api/v1}:
+2024-04-05 22:47:40 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:47:40 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:47:40 info: FileController {/api/v1/file}:
+2024-04-05 22:47:40 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:47:40 info: UserController {/api/v1/users}:
+2024-04-05 22:47:40 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:47:40 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:47:40 info: Nest application successfully started
+2024-04-05 22:47:40 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:47:50 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:47:50 info: AppController {/api/v1}:
+2024-04-05 22:47:50 info: Mapped {/api/v1, GET} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:47:50 info: DeliveryController {/api/v1}:
+2024-04-05 22:47:50 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:47:50 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:47:50 info: FileController {/api/v1/file}:
+2024-04-05 22:47:50 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:47:50 info: UserController {/api/v1/users}:
+2024-04-05 22:47:50 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:47:50 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:47:50 info: Nest application successfully started
+2024-04-05 22:47:50 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:48:05 info: ✅ openapi.json 파일을 생성했습니다.
+2024-04-05 22:48:05 info: AppController {/api/v1}:
+2024-04-05 22:48:05 info: Mapped {/api/v1, GET} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/stream, GET} route
+2024-04-05 22:48:05 info: DeliveryController {/api/v1}:
+2024-04-05 22:48:05 info: PaymentController {/api/v1/payments}:
+2024-04-05 22:48:05 info: Mapped {/api/v1/payments, POST} route
+2024-04-05 22:48:05 info: FileController {/api/v1/file}:
+2024-04-05 22:48:05 info: Mapped {/api/v1/file, POST} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/file/multiple, POST} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/file/multiple-fields, POST} route
+2024-04-05 22:48:05 info: UserController {/api/v1/users}:
+2024-04-05 22:48:05 info: Mapped {/api/v1/users, GET} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/users/:id, GET} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/users, POST} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/users/:id, PATCH} route
+2024-04-05 22:48:05 info: Mapped {/api/v1/users/:id, DELETE} route
+2024-04-05 22:48:05 info: Nest application successfully started
+2024-04-05 22:48:05 info: 🚀 Application is running on: http://localhost:3000
+2024-04-05 22:48:10 info: ::1 - - [05/Apr/2024:13:48:10 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:10 info: ::1 - - [05/Apr/2024:13:48:10 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:10 info: ::1 - - [05/Apr/2024:13:48:10 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:11 info: ::1 - - [05/Apr/2024:13:48:11 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:11 info: ::1 - - [05/Apr/2024:13:48:11 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:11 info: ::1 - - [05/Apr/2024:13:48:11 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:11 info: ::1 - - [05/Apr/2024:13:48:11 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:11 info: ::1 - - [05/Apr/2024:13:48:11 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:12 info: ::1 - - [05/Apr/2024:13:48:12 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:12 info: ::1 - - [05/Apr/2024:13:48:12 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:12 info: ::1 - - [05/Apr/2024:13:48:12 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:12 info: ::1 - - [05/Apr/2024:13:48:12 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:12 info: ::1 - - [05/Apr/2024:13:48:12 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:13 info: ::1 - - [05/Apr/2024:13:48:13 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:13 info: ::1 - - [05/Apr/2024:13:48:13 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:13 info: ::1 - - [05/Apr/2024:13:48:13 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:13 info: ::1 - - [05/Apr/2024:13:48:13 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:13 info: ::1 - - [05/Apr/2024:13:48:13 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:14 info: ::1 - - [05/Apr/2024:13:48:14 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:14 info: ::1 - - [05/Apr/2024:13:48:14 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:14 info: ::1 - - [05/Apr/2024:13:48:14 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:14 info: ::1 - - [05/Apr/2024:13:48:14 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:15 info: ::1 - - [05/Apr/2024:13:48:15 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:15 info: ::1 - - [05/Apr/2024:13:48:15 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:15 info: ::1 - - [05/Apr/2024:13:48:15 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:15 info: ::1 - - [05/Apr/2024:13:48:15 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:16 info: ::1 - - [05/Apr/2024:13:48:16 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:16 info: ::1 - - [05/Apr/2024:13:48:16 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:16 info: ::1 - - [05/Apr/2024:13:48:16 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:17 info: ::1 - - [05/Apr/2024:13:48:17 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:17 info: ::1 - - [05/Apr/2024:13:48:17 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:17 info: ::1 - - [05/Apr/2024:13:48:17 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:17 info: ::1 - - [05/Apr/2024:13:48:17 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:18 info: ::1 - - [05/Apr/2024:13:48:18 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:18 info: ::1 - - [05/Apr/2024:13:48:18 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:18 info: ::1 - - [05/Apr/2024:13:48:18 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:19 info: ::1 - - [05/Apr/2024:13:48:19 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:19 info: ::1 - - [05/Apr/2024:13:48:19 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:20 info: ::1 - - [05/Apr/2024:13:48:20 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:20 info: ::1 - - [05/Apr/2024:13:48:20 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:20 info: ::1 - - [05/Apr/2024:13:48:20 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:21 info: ::1 - - [05/Apr/2024:13:48:21 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:21 info: ::1 - - [05/Apr/2024:13:48:21 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:21 info: ::1 - - [05/Apr/2024:13:48:21 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:22 info: ::1 - - [05/Apr/2024:13:48:22 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:22 info: ::1 - - [05/Apr/2024:13:48:22 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:23 info: ::1 - - [05/Apr/2024:13:48:23 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:23 info: ::1 - - [05/Apr/2024:13:48:23 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:23 info: ::1 - - [05/Apr/2024:13:48:23 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:24 info: ::1 - - [05/Apr/2024:13:48:24 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+
+2024-04-05 22:48:24 info: ::1 - - [05/Apr/2024:13:48:24 +0000] "GET /api/v1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+

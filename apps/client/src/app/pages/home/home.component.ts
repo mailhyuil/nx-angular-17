@@ -1,4 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  afterNextRender,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -6,48 +13,68 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import FileUploadComponent from '../../components/file-upload/file-upload.component';
-import { VideoComponent } from '../../components/video/video.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    VideoComponent,
-    FileUploadComponent,
-  ],
+  imports: [FormsModule, ReactiveFormsModule, FileUploadComponent],
 })
-export default class HomeComponent implements OnInit {
+export default class HomeComponent implements AfterViewInit {
   fb = inject(FormBuilder);
   file = this.fb.control<File | null>(null, [Validators.required]);
   http = inject(HttpClient);
-
+  chunkSize = 1000 * 1000 * 5; // 5MB
+  start = 0;
+  end = this.start + this.chunkSize - 1;
+  mediaSource: MediaSource;
+  mimeCodec = 'video/mp4; codecs="avc1.64000a, mp4a.40.2"';
+  @ViewChild('videoRef') videoRef: ElementRef<HTMLVideoElement>;
+  fetchArrayBuffer$ = () => {
+    return this.http.get('http://localhost:3000/api/v1', {
+      responseType: 'arraybuffer',
+      headers: {
+        Range: `bytes=${this.start}-${this.end}`,
+      },
+    });
+  };
   constructor() {
-    this.http
-      .get('http://localhost:3000/api/v1', {
-        responseType: 'blob',
-        observe: 'events',
-        reportProgress: true,
-      })
-      .subscribe((event) => {
-        if (event.type === HttpEventType.DownloadProgress) {
-          // 진행률
-          const progress = Math.round((100 * event.loaded) / event.total!);
-          console.log(`File is ${progress}% loaded.`);
-        } else if (event instanceof HttpResponse) {
-          // 완료
-          console.log('File is completely loaded!');
-        }
+    afterNextRender(() => {});
+  }
+  ngAfterViewInit(): void {
+    if (MediaSource.isTypeSupported(this.mimeCodec)) {
+      this.mediaSource = new MediaSource();
+      const video = this.videoRef.nativeElement;
+      video.src = URL.createObjectURL(this.mediaSource);
+      if (!video) return;
+      video.addEventListener('progress', () => {
+        console.log('progress');
       });
+      video.addEventListener('seeking', () => {
+        console.log('seeking');
+      });
+      this.mediaSource.addEventListener('sourceclose', () => {
+        console.log('sourceclose');
+      });
+      this.mediaSource.addEventListener('sourceopen', () => {
+        const sourceBuffer = this.mediaSource.addSourceBuffer(this.mimeCodec);
+        this.fetchArrayBuffer$().subscribe(async (arrayBuffer) => {
+          sourceBuffer.addEventListener('updateend', () => {
+            console.log(sourceBuffer);
+            video.load();
+          });
+          sourceBuffer.appendBuffer(arrayBuffer);
+        });
+      });
+    } else {
+      console.error('Unsupported MIME type');
+    }
   }
 
-  ngOnInit(): void {}
-  submit() {
+  upload() {
     const formData = new FormData();
     const file = this.file.value;
     if (!file) return;
